@@ -1,41 +1,41 @@
-ƒл€ компил€ции запускаем:
+Compilation:
 
 javac -d ./bin ./src/by/nik/lesson2/*
 
-где "-d" параметр дл€ указани€ директории куда попадут скомпилированные файлы ( "/bin" )
-./src/by/nik/lesson2/* - путь к файлам .java от текущей директории
-
-в результате в директории bin создаютс€ скомпилированные файлы в соответствии со структурой пакета
+"/bin" - path to result files *.class
+"./src/by/nik/lesson2/*" - path to files *.java from the current directory
 
 
-дл€ запуска на исполнение:
+
+To run:
+
 java -classpath ./bin by.nik.lesson2.Person
 
-где "./bin" - путь к скомпилированным файлам от текущей директории,
-    "by.nik.lesson2.Person" - название главного класса
+"./bin" - path to compiled files,
+"by.nik.lesson2.Person" - main class
 
 ---------------------- 
 
-ƒл€ создани€ jar архива создаем файл "manifest.mf" где указываем параметры:
+to create jar:
+first create a file "manifest.mf" with parameters:
 
-class-path: bin/ - путь к скомпилированным файлам
-Main-Class: by.nik.lesson2.Person - главный класс
+class-path: bin/ - path to compiled files
+Main-Class: by.nik.lesson2.Person - main class
 
-далее запускаем
+then run:
 jar -cmf manifest.mf person.jar -C bin .
 
-где	"manifest.mf" - файл манифеста (при необходимости с путем)
-	"bin" - путь к скомпилированным классам
-	"." - путь, куда будет помещен jar-файл
+"bin" - path to compiled files
+"." - path to result person.jar (current directory)
 
 
 --------------------- 
-ƒл€ запуска на исполнение jar файла набираем "java" с параметром "-jar" и именем jar файла с путем и рассширением jar:
-в моем случае: java -jar person.jar
+To run the jar:
+java -jar person.jar
 
 -------------------------------------- 
-при компил€ции получили 5 файлов *.class
-»мена вложенных классов состо€т из имен внешнего и вложенного класса, разделенных "$"
-в имени анонимного класса присутствует "1" вместо его имени
-в имени локального класса "1" предвар€ет его им€
-в отличии от анонимного класса л€мбда нового *.class не добавила
+
+The names of nested classes consist of the names of the external and nested class, separated by "$"
+the name of an anonymous class contains "1" instead of its name
+in the name of the local class, the number "1" stands before its name
+unlike the anonymous lambda did not add a new file *.class
