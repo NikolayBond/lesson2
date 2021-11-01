@@ -1,0 +1,2 @@
+Main-Class: by.nik.lesson2.Person
+class-path: bin/
