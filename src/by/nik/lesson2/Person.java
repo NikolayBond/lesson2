@@ -1,16 +1,11 @@
 package by.nik.lesson2;
 
 
-@FunctionalInterface
-interface Convert {
-    String doUpper(String string);
-}
-
 public class Person {
 
     Convert convert;
 
-    public Person(Convert convert) {
+    private Person(Convert convert) {
         this.convert = convert;
     }
 
@@ -34,8 +29,12 @@ public class Person {
         activities.typing();
 
         class TestLocalClass {
-            String string = "testing a local class";
+                private void typing(){
+                System.out.println("person is typing from local class");
+            }
         }
+        TestLocalClass testLocalClass = new TestLocalClass();
+        testLocalClass.typing();
     }
 
     public static void main(String... args) {
