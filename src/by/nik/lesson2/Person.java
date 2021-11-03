@@ -3,7 +3,7 @@ package by.nik.lesson2;
 
 public class Person {
 
-    Convert convert;
+    private Convert convert;
 
     private Person(Convert convert) {
         this.convert = convert;
@@ -11,7 +11,7 @@ public class Person {
 
     private class Activities {
         private void typing() {
-            System.out.println(convert.doUpper("person is typing from lambda"));
+            System.out.println(convert.doUpper("person is typing using lambda"));
 
             Convert typingUP = new Convert() {
                 @Override
